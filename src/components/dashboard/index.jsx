@@ -1,5 +1,9 @@
-import { Summary } from "../summary";
+import { Summary } from "../Summary";
+import { TransactionTable } from "../TransactionTable";
 import { Container } from "./styles";
+
+
+
 
 
 export function Dashboard(){
@@ -7,7 +11,8 @@ export function Dashboard(){
     return (
         <Container>
             <Summary/>
-                
+            <TransactionTable/>
         </Container>
+        
     )
 }

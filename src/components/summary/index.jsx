@@ -1,7 +1,8 @@
-import { Container } from "./style";
+
 import Entradas from "../../assets/Entradas.svg";
 import Saídas from "../../assets/Saídas.svg";
 import Total from "../../assets/Total.svg";
+import { Container } from "./style";
 
 
 
