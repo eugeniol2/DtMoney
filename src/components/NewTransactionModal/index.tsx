@@ -1,12 +1,13 @@
 import Modal from 'react-modal';
+import { FormEvent, useState, useContext } from 'react';
+//import { api } from '../../services/api';
 
 import { Container, TransactionTypeContainer, RadioBox } from './style';
 
 import closeImg from '../../assets/close.svg';
 import incomeImg from '../../assets/Entradas.svg';
 import outcomeImg from '../../assets/Saídas.svg';
-import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
+import { TransactionsContext, TransactionsProvider } from '../../styles/TransactionsContext';
 
 
 
@@ -25,19 +26,32 @@ export function NewTransactionModal({ isOpen, onRequestClose }:newTransactionMod
     const [category, setCategory] = useState('');
     const [type, setType] = useState('deposit');
     
+
+    const {createTransaction} = useContext(TransactionsContext);
     
 
-    function handleCreateNewTransaction(event: FormEvent){
+    async function handleCreateNewTransaction(event: FormEvent){
         event.preventDefault();
 
-        const data = {
+        await createTransaction(
+            {
+            
             title,
-            amount,
+            amount,            
             category,
             type
-        }
 
-        api.post('/transactions',data)
+            }
+            
+        )
+
+        
+
+        setTitle('');
+        setAmount(0);
+        setCategory('');
+        setType('deposit');
+        onRequestClose();
 
     }
 
@@ -48,6 +62,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }:newTransactionMod
         onRequestClose={onRequestClose}     
         overlayClassName="react-modal-overlay" 
         className="react-modal-content" 
+        ariaHideApp={false}
         >
 
             <button 
