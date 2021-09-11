@@ -2,11 +2,38 @@
 import Entradas from "../../assets/Entradas.svg";
 import Saídas from "../../assets/Saídas.svg";
 import Total from "../../assets/Total.svg";
+import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./style";
 
 
 
+
+
 export function Summary(){
+
+    const {transactions} = useTransactions()
+
+    
+    const summary = transactions.reduce((acc, transactions) => {
+        if (transactions.type === "deposit"){
+            acc.deposit += transactions.amount;
+            acc.total += transactions.amount;
+        }
+        else if (transactions.type === "withdraw"){
+            acc.withdraw += transactions.amount
+            acc.total -= transactions.amount;
+        }
+
+    return acc; 
+            
+    },{
+        deposit: 0,
+        withdraw: 0,
+        total: 0,
+    })
+      
+
+
     return (
         
         <Container>
@@ -16,7 +43,7 @@ export function Summary(){
                     <img src={Entradas} alt="Entradas" />
                 </header>
                 <strong>
-                    R$: 12.400,00
+                    R$: {summary.deposit}
                 </strong>
             </div>
             <div>
@@ -25,7 +52,7 @@ export function Summary(){
                     <img src={Saídas} alt="Entradas" />
                 </header>
                 <strong>
-                    R$: 1.400,00
+                    R$: {summary.withdraw}
                 </strong>
             </div>
             <div className="highlight-background">
@@ -34,7 +61,7 @@ export function Summary(){
                     <img src={Total} alt="Entradas" />
                 </header>
                 <strong>
-                    R$: 500,00
+                    R$: {summary.total}
                 </strong>
             </div>
         </Container>

@@ -5,7 +5,7 @@ import { GlobalStyle } from "./styles/global";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 
 import { Header } from "./components/Header";
-import { TransactionsProvider } from "./styles/TransactionsContext";
+import { TransactionsProvider } from "./hooks/useTransactions";
 
 
 
