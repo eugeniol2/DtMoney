@@ -44,13 +44,10 @@
     $ git clone https://github.com/eugeniol2/DtMoney
 
     # Navegar para o diretório
-    $ cd GoRestaurante
+    $ cd DtMoney
 
     # Instalar as package
     $ yarn
-
-    # Rodar o servidor
-    $ yarn server
 
     # Rodar o projeto
     $ yarn start
