@@ -57,6 +57,6 @@
 ```
 
 <h2> Licença ✔️ </h2>
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo <a href="https://github.com/eugeniol2/DtMoney/blob/main/LICENSE"> License </a> para mais detalhes.
 
 ##
