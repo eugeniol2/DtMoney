@@ -32,7 +32,7 @@
   </ul>
 
 <h2>Requisitos ⚠️ </h2>
-- Ter [**Git**](https://git-scm.com/) para clonar o projeto.
+- Ter (https://git-scm.com/) para clonar o projeto.
 
 
 
