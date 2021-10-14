@@ -33,7 +33,6 @@
 
 <h2>Requisitos ⚠️ </h2>
 - Ter [Git](https://git-scm.com/) para clonar o projeto.
-- [Lets go to Quora](https://www.quora.com)
 
 
 
