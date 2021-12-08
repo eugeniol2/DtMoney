@@ -32,8 +32,7 @@
   </ul>
 
 <h2>Requisitos ⚠️ </h2>
-- Ter [Git](https://git-scm.com/) para clonar o projeto.
-
+- <a href="https://git-scm.com/">GIT</a>
 
 
 <h2> Como executar 🚀  </h2>
